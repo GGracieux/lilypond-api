@@ -66,10 +66,8 @@ class LilyPond {
      */
     private function getConvertResponse($success, $message) {
         return array(
-            'status' => array(
-                'code' => $success ? 'OK' : 'ERROR',
-                'message' => $message
-            ),
+            'statusCode' => $success ? 'OK' : 'ERROR',
+            'message' => $message,
             'base64PdfData' => $this->getResultFile('pdf'),
             'base64MidiData' => $this->getResultFile('midi'),
             'logs' => $this->getLogData()
