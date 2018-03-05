@@ -1,7 +1,7 @@
 # lilypond-api
-API REST conteneurisée (Docker, PHP, Slim, Lilypond) pour convertion de fichier LilyPond en PDF et MIDI
+Containerized REST API (Docker, PHP, Slim, Lilypond) for converting Lilypond file format to PDF and MIDI
 
-## Mise en route
+## Start
 
 #### Installation
 ```bash
@@ -18,18 +18,18 @@ docker image build -t lilypond .
 ```bash
 docker-compose up
 ```
-Le serveur apache est exposé sur le port 80 avec deux EndPoint : 
+Apache server is listening on port 80 with two endpoints : 
 - http://[docker-machine]/info 
 - http://[docker-machine]/convert
 
 
-## Utilisation
+## API Usage
 
-### API Endpoint /info
+### Endpoint /info
 
 #### Request
-- Methode : GET
-- Pas de paramètres
+- Verb : GET
+- No parameter
 	
 #### Response
 - Content-Type : Application/json
@@ -37,17 +37,17 @@ Le serveur apache est exposé sur le port 80 avec deux EndPoint :
 {
    "apiName":"lilypond",
    "version":"1",
-   "description":"Convertion de fichier lp en midi et pdf"
+   "description":"Convereting lp file to midi and pdf"
 }
 ```  
 	
-### API Endpoint /convert
+### Endpoint /convert
 	
 #### Request	
-- Methode : POST
+- Verb : POST
 - Content-Type : Application/json
-- Parametres :
--- lpData : Chaine au format Lilypond
+- Parameters :
+-- lpData : Lilypond format string 
 ```json
 {
    "lpData": "\\score{ { c'4 d'4 e'4 f'4 } \\layout{} \\midi{} }"
@@ -59,12 +59,12 @@ Le serveur apache est exposé sur le port 80 avec deux EndPoint :
 ```json  
 {
   "statusCode": "OK|ERROR",
-  "message": "Complement d'information en cas d'erreur",
+  "message": "Information complement on error",
   "base64PdfData": "JVBERi0xLjQKJcfsj6IKNSAwIG9iago8PC9MZW5n.......0YK",
   "base64MidiData": "TVRoZAAAAAYAAQACAYBNVHJrAAAAUwD/Aw1jb250......F0b",
   "logs": [
     {
-      "title": "Lilypond : Generation PDF et Midi",
+      "title": "Lilypond : PDF and MIDI Generation",
       "content": "Processing 5a9d77d267c75/5a9d77d267c75.lp"
     }
   ]
