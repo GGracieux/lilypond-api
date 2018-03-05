@@ -1,6 +1,6 @@
-Corrige #
+Fixes #
 
-## Changements proposés
+## Proposed changes
 
   -
   -
