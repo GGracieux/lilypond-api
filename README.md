@@ -49,7 +49,9 @@ Le serveur apache est exposé sur le port 80 avec deux EndPoint :
 - Parametres :
 -- lpData : Chaine au format Lilypond
 ```json
-{"lpData": "\\score{ { c'4 d'4 e'4 f'4 } \\layout{} \\midi{} }"}
+{
+   "lpData": "\\score{ { c'4 d'4 e'4 f'4 } \\layout{} \\midi{} }"
+}
 ```
 	
 #### Response
