@@ -57,7 +57,7 @@ Le serveur apache est exposé sur le port 80 avec deux EndPoint :
 ```json  
 {
   "statusCode": "OK|ERROR",
-  "message": "",
+  "message": "Complement d'information en cas d'erreur",
   "base64PdfData": "JVBERi0xLjQKJcfsj6IKNSAwIG9iago8PC9MZW5n.......0YK",
   "base64MidiData": "TVRoZAAAAAYAAQACAYBNVHJrAAAAUwD/Aw1jb250......F0b",
   "logs": [
