@@ -1,11 +1,11 @@
-## Comportement attendu
+## Expected behavior
 
 
-## Comportement actuel
+## Actual behavior
 
 
-## Etapes pour reproduire le problème
+## Steps to reproduce the problem
 
   1.
-  1.
-  1.
+  2.
+  3.
