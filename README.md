@@ -9,12 +9,12 @@ cd api
 composer install
 ```
 	
-#### Build image
+#### Build
 ```bash
 docker image build -t lilypond .
 ```
 
-#### Run image
+#### Run
 ```bash
 docker-compose up
 ```
