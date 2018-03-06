@@ -70,3 +70,7 @@ Apache server is listening on port 80 with two endpoints :
   ]
 }
 ```
+
+## Also read
+- [How to contribute](CONTRIBUTING.md)
+- [Code of conduct](CODE_OF_CONDUCT.md)
