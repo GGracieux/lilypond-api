@@ -1,5 +1,5 @@
 # lilypond-api
-Containerized REST API (Docker, PHP, Slim, Lilypond) for converting Lilypond file format to PDF and MIDI
+REST API (Docker, PHP, Slim, Lilypond) for converting Lilypond file format to PDF and MIDI
 
 ## Start
 
