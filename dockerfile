@@ -1,8 +1,12 @@
+FROM teuki/lilypond
+#
+# teuki/lilypond dockerfile
+#
 # Image source
-FROM 1and1internet/ubuntu-16-apache-php-7.0
-
+# FROM 1and1internet/ubuntu-16-apache-php-7.0
+#
 # Installation de lilypond
-RUN apt-get update && apt-get install -y lilypond
+# RUN apt-get update && apt-get install -y lilypond
 
 # Info image
 MAINTAINER ggracieux@gmail.com
