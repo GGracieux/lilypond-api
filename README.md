@@ -35,9 +35,12 @@ Apache server is listening on port 80 with two endpoints :
 - Content-Type : Application/json
 ```json
 {
-   "apiName":"lilypond",
-   "version":"1",
-   "description":"Convereting lp file to midi and pdf"
+  "apiName": "lilypond",
+  "version": {
+    "api": "1.1",
+    "lilypond": "GNU LilyPond 2.18.2"
+  },
+  "description": "Lilypond to midi & pdf convertion"
 }
 ```  
 	
@@ -64,7 +67,7 @@ Apache server is listening on port 80 with two endpoints :
   "base64MidiData": "TVRoZAAAAAYAAQACAYBNVHJrAAAAUwD/Aw1jb250......F0b",
   "logs": [
     {
-      "title": "Lilypond : PDF and MIDI Generation",
+      "title": "Lilypond : PDF & MIDI Generation",
       "content": "Processing 5a9d77d267c75/5a9d77d267c75.lp"
     }
   ]
