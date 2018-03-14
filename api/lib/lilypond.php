@@ -49,7 +49,7 @@ class LilyPond {
             // Execution Lilypond
             $cmd  = "lilypond -o $this->dir $this->inputFile > $this->logFile 2>&1";
             exec($cmd,$op,$retVal);
-            if ($retVal!=0) throw new Exception("Erreur lors de l'execution lilypond");
+            if ($retVal!=0) throw new Exception("Error while executing lilypond");
 
             // Compose le retour OK
             $result = $this->getConvertResponse(true,'');
