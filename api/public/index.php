@@ -4,7 +4,9 @@
 define('APP_ROOT',dirname(__DIR__));
 require_once APP_ROOT . '/vendor/autoload.php';
 require_once APP_ROOT . '/lib/lilypond.php';
-require_once APP_ROOT . '/lib/const.php';
+
+// Includes env defined constant (generated through docker image)
+@require_once APP_ROOT . '/lib/const.php';
 
 // Creates app
 $app = new \Slim\App();
