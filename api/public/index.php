@@ -1,45 +1,43 @@
 <?php 
 
-// Définition APP_ROOT et autoloader
+// Define APP_ROOT and autoloader
 define('APP_ROOT',dirname(__DIR__));
-require APP_ROOT . '/vendor/autoload.php';
-require APP_ROOT . '/lib/lilypond.php';
+require_once APP_ROOT . '/vendor/autoload.php';
+require_once APP_ROOT . '/lib/lilypond.php';
+require_once APP_ROOT . '/lib/const.php';
 
-// Instanciation de l'application
+// Creates app
 $app = new \Slim\App();
 
 
 // ------------------------
-// ROUTE INFO
+// INFO ROUTE
 // ------------------------
 $app->get('/info', function ($request, $response, $args) {
 
-    // Compose le message retour
-	$infos = array(
-		'apiName' => 'lilypond',
-		'version'=>'1',
-		'description' => 'Convertion de fichier lp en midi et pdf',
-	);
+    // gets API Information
+    $lp = new LilyPond();
+    $result = $lp->info();
 
-	// retourne le message
-    return $response->withJson($infos,200);
+	// returns json response
+    return $response->withJson($result,200);
 
 });
 
 
 // ------------------------
-// ROUTE CONVERT
+// CONVERT ROUTE
 // ------------------------
 $app->post('/convert', function ($request, $response, $args) {
 
-    // Recup lpData via la request
+    // Gets lpData in request
     $lpData = $request->getParsedBody()['lpData'];
 
     // Convertion
     $lp = new LilyPond();
     $result = $lp->convert($lpData);
 
-	// retour resultat	
+	// retrun results	
 	return $response->withJson($result,200);
 
 });

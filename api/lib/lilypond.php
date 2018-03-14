@@ -17,7 +17,22 @@ class LilyPond {
     // Chemin complet du fichier de log
     private $logFile;
 
-
+	
+    //-----------------------------------------
+    // INFO
+    //-----------------------------------------
+	
+	public function info() {
+		return array(
+			'apiName' => 'lilypond',
+			'version' => array(
+				'api' => '1.1',
+				'lilypond' => LILYPOND_VERSION
+			),
+			'description' => 'Convertion de fichier lp en midi et pdf',
+		);		
+	}
+	
     //-----------------------------------------
     // CONVERTION
     //-----------------------------------------
