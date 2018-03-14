@@ -29,7 +29,7 @@ class LilyPond {
 				'api' => '1.1',
 				'lilypond' => LILYPOND_VERSION
 			),
-			'description' => 'Convertion de fichier lp en midi et pdf',
+			'description' => 'Lilypond to midi & pdf convertion',
 		);		
 	}
 	
@@ -111,7 +111,7 @@ class LilyPond {
         $log = array();
         if (is_file($this->logFile)) {
             $log[] = array(
-                'title' => 'Lilypond : Generation PDF et Midi',
+                'title' => 'Lilypond : PDF & MIDI Generation',
                 'content' => file_get_contents($this->logFile)
             );
         }
