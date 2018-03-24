@@ -11,7 +11,7 @@ composer install
 	
 #### Build
 ```bash
-docker image build -t lilypond .
+docker image build -t lilypond-api .
 ```
 
 #### Run
