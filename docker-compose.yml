@@ -2,6 +2,6 @@ version: '2'
 
 services:
     web:
-        image: lilypond:latest
+        image: lilypond-api:latest
         ports:
             - "80:80"
