@@ -39,6 +39,10 @@ class LilyPond {
 
     public function convert($lpData) {
 
+        // Mode optimiste
+        $success = true;
+        $message = '';
+
         try {
 
             // Initialisation
@@ -51,15 +55,21 @@ class LilyPond {
             exec($cmd,$op,$retVal);
             if ($retVal!=0) throw new Exception("Error while executing lilypond");
 
-            // Compose le retour OK
-            $result = $this->getConvertResponse(true,'');
-
         } catch (Exception $ex) {
 
             // Compose le retour ERREUR
-            $result = $this->getConvertResponse(false, $ex->getMessage());
-        }
+            $success = false;
+            $message = $ex->getMessage();
 
+        } 
+
+        // Compose la réponse
+        $result = $this->getConvertResponse($success,$message);
+
+        // Efface les données de session
+        $this->deleteSessionData();
+
+        // Retourne le résultat
         return $result;
     }
 
@@ -116,6 +126,14 @@ class LilyPond {
             );
         }
         return $log;
+    }
+
+    /**
+    * Efface les données de session
+    */
+    private function deleteSessionData() {
+        $cmd = "rm -rf " . $this->dir;
+        exec($cmd,$op,$retVal);
     }
 
 }
