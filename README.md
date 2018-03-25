@@ -1,6 +1,10 @@
 # lilypond-api
 REST API (Docker, PHP, Slim, Lilypond) for converting Lilypond file format to PDF and MIDI
 
+## Prerequisite
+- Install [composer](https://getcomposer.org/) 
+- Install [docker](https://www.docker.com/)
+
 ## Start
 
 #### Installation
